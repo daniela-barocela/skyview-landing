@@ -1,3 +1,5 @@
+const showreelSrc = `${import.meta.env.BASE_URL}showreel.mp4`;
+
 const ShowreelSection = () => {
   return (
     <section className="section-padding" style={{ background: "var(--section-gradient)" }}>
@@ -11,17 +13,16 @@ const ShowreelSection = () => {
           tecnología de vuelo estabilizado
         </h2>
         <div className="video-container">
-          {/* Reemplazar src con URL del video real */}
-          <div className="video-placeholder">
-            <div className="flex flex-col items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-foreground/20">
-                <svg className="ml-1 h-8 w-8 text-foreground/60" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <span className="text-sm text-muted-foreground">Video showreel — Reemplazar con video real</span>
-            </div>
-          </div>
+          <video
+            className="absolute inset-0 h-full w-full object-contain bg-black"
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="Showreel MAPADRONE"
+          >
+            <source src={showreelSrc} type="video/mp4" />
+            Tu navegador no reproduce video HTML5.
+          </video>
         </div>
       </div>
     </section>
